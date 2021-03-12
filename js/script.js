@@ -1,7 +1,5 @@
 $(
 function() {
-    // variables
-
     $(".next").click(
       function(){
         var $imageVisible = $(".images img.active")
@@ -13,6 +11,7 @@ function() {
         }
       }
     );
+
     $(".prev").click(
       function(){
         var $imageVisible = $(".images img.active")
@@ -24,6 +23,24 @@ function() {
         }
       }
     );
+    $(".bullets > i").click(
+        function(){
+            $(this).toggleClass("active");
+      }
+    );
+
+    // $(".bullets fas.fa-circle").click(
+    //   function(){
+    //     var $images = $(".images img")
+    //     var $bullet = (".bullets fas.fa-circle");
+    //     var $imgIndex = $bullet.index($(this));
+    //     $("bullets").children().removeClass("active")
+    //     $(this).addClass("active");
+    //     $image.removeClass("active");
+    //     $image.eq($imgIndex).addClass("active");
+    //   }
+    // );
+
 
   }
 );

@@ -47,6 +47,7 @@ body{
 }
 .bullets > i {
   margin: 0 15px;
+  cursor: pointer;
 }
 .bullets > i.active {
     color: #ffffff;
