@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato';
+}
+.container {
+    display: flex;
+    margin: 0 auto;
+    max-width: 1000px;
+    height: 100vh;
+}
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 80%;
+}
+.carousel .images {
+    width: 90%;
+}
+.carousel .images img {
+    display: none;
+    width: 100%;
+}
+.carousel .images img .active {
+    display: inline-block;
+}
+.prev, .next {
+    width: 5%;
+    color: #565a5c;
+    font-size: 40px;
+    cursor: pointer;
+}
+.next {
+  text-align: right;
+}
+/* .nav {
+  text-align: center;
+    padding: 20px;
+    border-radius: 999px;
+    background: rgba(0,0,0,.7);
+    color: white;
+}
+.nav > i {
+    margin: 0 20px;
+}
+.nav > i.active {
+    color: blue;
+} */
