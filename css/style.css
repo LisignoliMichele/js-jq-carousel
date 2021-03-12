@@ -24,13 +24,42 @@ body{
 .carousel .images {
   width: 80%;
   min-height: 650px;
+  overflow: hidden;
+  position: relative;
 }
 .carousel .images img {
   display: none;
   width: 100%;
+  position: absolute;
 }
 .carousel .images img.active {
   display: inline-block;
+}
+.slideright{
+animation-name: slideright;
+animation-duration: 0.3s;
+animation-timing-function: linear;
+}
+@keyframes slideright {
+  0%{
+    left: 100%;
+  }
+  100%{
+    left: 0;
+  }
+}
+.slideleft{
+animation-name: slideleft;
+animation-duration: 0.3s;
+animation-timing-function: linear;
+}
+@keyframes slideleft {
+  0%{
+    right: 100%;
+  }
+  100%{
+    right: 0;
+  }
 }
 .prev,
 .next {

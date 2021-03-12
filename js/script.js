@@ -5,13 +5,13 @@ function() {
     function nextPicture(){
       var $imageVisible = $(".images img.active");
       var $bulletVisible = $(".bullets > i.active");
-      $imageVisible.removeClass("active");
+      $imageVisible.removeClass(["active", "slideright"]);
       $bulletVisible.removeClass("active");
       if ( $imageVisible.hasClass("last") && $bulletVisible.hasClass("last") ){
-        $(".images img.first").addClass("active");
+        $(".images img.first").addClass(["active", "slideright"]);
         $(".bullets > i.first").addClass("active");
       }else{
-        $imageVisible.next().addClass("active");
+        $imageVisible.next().addClass(["active", "slideright"]);
         $bulletVisible.next().addClass("active");
       }
     }
@@ -19,13 +19,13 @@ function() {
     function prevPicture(){
       var $imageVisible = $(".images img.active");
       var $bulletVisible = $(".bullets > i.active");
-      $imageVisible.removeClass("active");
+      $imageVisible.removeClass(["active", "slideleft"]);
       $bulletVisible.removeClass("active");
       if ($imageVisible.hasClass("first") && $bulletVisible.hasClass("first")){
-        $(".images img.last").addClass("active");
+        $(".images img.last").addClass(["active", "slideleft"]);
         $(".bullets > i.last").addClass("active");
       }else{
-        $imageVisible.prev().addClass("active");
+        $imageVisible.prev().addClass(["active", "slideleft"]);
         $bulletVisible.prev().addClass("active");
       }
     }
