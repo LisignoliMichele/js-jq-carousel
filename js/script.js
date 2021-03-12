@@ -1,27 +1,37 @@
 $(
 function() {
-    $(".next").click(
-      function(){
-        var $imageVisible = $(".images img.active")
-        $imageVisible.removeClass("active");
-        if ($imageVisible.hasClass("last") == true){
-          $(".images img.first").addClass("active");
-        }else{
-          $imageVisible.next().addClass("active");
-        }
+
+
+    function nextPicture(){
+      var $imageVisible = $(".images img.active");
+      var $bulletVisible = $(".bullets > i.active");
+      $imageVisible.removeClass("active");
+      $bulletVisible.removeClass("active");
+      if ( $imageVisible.hasClass("last") && $bulletVisible.hasClass("last") ){
+        $(".images img.first").addClass("active");
+        $(".bullets > i.first").addClass("active");
+      }else{
+        $imageVisible.next().addClass("active");
+        $bulletVisible.next().addClass("active");
       }
-    );
-    $(".prev").click(
-      function(){
-        var $imageVisible = $(".images img.active")
-        $imageVisible.removeClass("active");
-        if ($imageVisible.hasClass("first") == true){
-          $(".images img.last").addClass("active");
-        }else{
-          $imageVisible.prev().addClass("active");
-        }
+    }
+
+    function prevPicture(){
+      var $imageVisible = $(".images img.active");
+      var $bulletVisible = $(".bullets > i.active");
+      $imageVisible.removeClass("active");
+      $bulletVisible.removeClass("active");
+      if ($imageVisible.hasClass("first") && $bulletVisible.hasClass("first")){
+        $(".images img.last").addClass("active");
+        $(".bullets > i.last").addClass("active");
+      }else{
+        $imageVisible.prev().addClass("active");
+        $bulletVisible.prev().addClass("active");
       }
-    );
+    }
+
+    // CLICK
+
     $(".bullets > i").click(
         function(){
           var $bullet = $(".bullets > i");
@@ -33,5 +43,32 @@ function() {
           $image.eq($imgIndex).addClass("active");
       }
     );
+
+    $(".next").click(
+      function(){
+        nextPicture();
+      }
+    );
+
+    $(".prev").click(
+      function(){
+        prevPicture();
+      }
+    );
+
+    // KEYPRESS
+    $(document).keydown(
+      function(e){
+
+        var keypress = e.keyCode || e.which;
+
+        if(keypress == 39) {   // right arrow
+          nextPicture();
+        }else if(keypress == 37){   // left arrow
+          prevPicture();
+        }
+      }
+    );
+
   }
 );
